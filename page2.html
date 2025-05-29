@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page 2 - Loyalty Points</title>
+    <link rel="stylesheet" href="page2.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+
+<body>
+    <header>
+        <nav>
+            <img src="header.png" alt="Logo" class="logo" />
+
+        </nav>
+    </header>
+
+    <div class="main-content2">
+        <h2 class="s3">Registration</h2>
+        <h3 class="s4">Please fill up your details</h3>
+        <form id="registrationForm">
+            <label for="name"> Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter name" required />
+            <div class="input-note">*please insert a name</div>
+
+            <div class="birthday-input">
+                <label>Birthday</label>
+                <div class="select-input">
+                    <select name="birthDay" required>
+                        <option value="" disabled selected>DD</option>
+                        <!-- Days 1 to 31 -->
+                        <script>
+                            for (let d = 1; d <= 31; d++) {
+                                document.write(`<option value="${d}">${d}</option>`);
+                            }
+                        </script>
+                    </select>
+
+                    <select name="birthMonth" required>
+                        <option value="" disabled selected>MM</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+
+                    <select name="birthYear" required>
+                        <option value="" disabled selected>YY</option>
+                        <!-- Years 1900 to current year -->
+                        <script>
+                            const currentYear = new Date().getFullYear();
+                            for (let y = currentYear; y >= 1900; y--) {
+                                document.write(`<option value="${y}">${y}</option>`);
+                            }
+                        </script>
+                    </select>
+                </div>
+                <div class="input-note">*please insert your birthday</div>
+            </div>
+            <div class="email-input">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email address" required />
+                <div class="input-note">*please insert a valid email address</div>
+
+                <div class="checkbox-wrapper">
+                    <label for="noEmail">No email address</label>
+                    <input type="checkbox" id="noEmail" name="noEmail" />
+
+
+                </div>
+
+            </div>
+            <button type="submit" class="submit-btn">continue</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>
+            <span class="powered-by">Powered by </span>
+            <a href="https://mulahrewards.com" target="_blank" rel="noopener" class="mulah-link">MulahRewards</a>
+        </p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        const urlParams = new URLSearchParams(window.location.search);
+        const phone = urlParams.get('phone') || '';  // correctly get phone from URL
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const name = formData.get('name');
+            const birthDay = formData.get('birthDay');
+            const birthMonth = formData.get('birthMonth');
+            const birthYear = formData.get('birthYear');
+
+            // Fix email checkbox logic: check if checked, then clear email
+            const noEmail = formData.get('noEmail');
+            let email = noEmail ? '' : formData.get('email');
+
+            const queryParams = new URLSearchParams({
+                phone: phone,
+                name: name,
+                birthDay: birthDay,
+                birthMonth: birthMonth,
+                birthYear: birthYear,
+                email: email
+            });
+
+            window.location.href = `page3.html?${queryParams.toString()}`;
+        });
+
+    </script>
+</body>
+
+</html>

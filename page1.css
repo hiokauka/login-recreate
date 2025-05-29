@@ -1,0 +1,114 @@
+.country-code,
+.phone-number {
+  border: none;             /* remove all borders */
+  border-bottom: 2px solid #f37523; /* add only bottom border */
+  background-color: transparent; /* no fill */
+  outline: none;
+  padding: 8px 6px;         /* adjust padding as needed */
+  font-size: 1.2rem;
+  /* remove border-radius since it's just a line */
+  border-radius: 0;
+  /* optionally set width for input */
+}
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  max-width: 400px;
+    margin: 0 auto;      /* this centers horizontally */
+  padding: 20px;       /* optional: add some padding */
+  box-sizing: border-box; /* good practice */
+ 
+}
+
+
+.country-code {
+  width: 70px; /* fixed width for dropdown */
+  -webkit-appearance: none; /* remove default arrow in some browsers */
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.phone-number {
+  flex: 1;  /* take the rest of the space */
+  width: 100%;
+}
+
+.phone-input-wrapper {
+    margin-top: 100px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.submit-btn {
+  background-color: #f37523;
+  color: white;          /* white text */
+  border: none;          /* no border */
+  padding: 12px 40px;    /* wider button (more horizontal padding) */
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 50px;    /* optional: slightly rounded corners */
+  width: 100%;
+   margin-top: 50px;
+}
+
+.main-content {
+  max-width: 500px;          /* limit width */
+  margin: 50px auto;         /* center horizontally + vertical spacing */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: left;        /* center headings and form */
+  font-family: Arial, sans-serif;
+}
+
+.s1{
+    margin-top: 0;
+    letter-spacing: 2px;
+    color: gray;
+    font-size: 3rem;
+}
+
+.s2{
+    margin-top: 50px;
+    color: #f37523;
+    letter-spacing: 1px;
+}
+
+footer{
+    border-top: 1px solid grey;
+
+}
+footer p {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  color: grey;
+  text-align: center;
+}
+
+.powered-by {
+  color: grey;
+}
+
+.mulah-link {
+  color: rgb(93, 93, 220);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mulah-link:hover {
+  color: darkblue; 
+}
+
+header {
+  display: flex;
+  justify-content: center;  /* centers content horizontally */
+  align-items: center;      /* centers content vertically */
+  padding: 20px 0;
+}
+
+.logo {
+  height: 60px;  /* adjust as needed */
+  width: auto;
+}

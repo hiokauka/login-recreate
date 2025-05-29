@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Phone Number Input with Country Code</title>
+    <link rel="stylesheet" href="page1.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="header.png" alt="Logo" class="logo" />
+
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <h2 class="s1">Hello, <br>Welcome!</h2>
+
+
+        <h3 class="s2">Check Your Loyalty Point & Rewards</h3>
+        <div>
+            <form id="phoneForm">
+                <div class="phone-input-wrapper">
+                    <select name="countryCode" id="countryCode" class="country-code" required>
+                        <option value="+60" selected>60+</option>
+                        <option value="+1">1+</option>
+                        <option value="+44">44+</option>
+                        <option value="+81">81+</option>
+                        <option value="+91">91+</option>
+                        <!-- Add more country codes as needed -->
+                    </select>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" pattern="\d{6,12}"
+                        required class="phone-number" />
+                </div>
+                <button type="submit" class="submit-btn">Check Loyalty Point</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            <span class="powered-by">Powered by </span>
+            <a href="https://mulahrewards.com" target="_blank" rel="noopener" class="mulah-link">MulahRewards</a>
+        </p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('phoneForm');
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            const countryCode = form.countryCode.value.trim();
+            const phone = form.phone.value.trim();
+
+            if (!/^\d+$/.test(phone)) {
+                alert('Please enter only numbers for the phone number.');
+                return;
+            }
+
+            const fullNumber = countryCode + phone;
+
+            if (fullNumber === '+60173527250') {
+                // Redirect to page2.html with phone in URL
+                window.location.href = `page2.html?phone=${encodeURIComponent(fullNumber)}`;
+            } else {
+                alert('Invalid phone number. Please enter +60173527250 to proceed.');
+            }
+        });
+
+    </script>
+</body>
+
+</html>

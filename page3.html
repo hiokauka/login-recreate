@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page 3 - Display Info</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #ffffff;
+            color: #333;
+            margin: auto;
+            padding: 0;
+
+            padding: 20px;
+            max-width: 400px;
+
+
+        }
+
+        header nav {
+            background: #ffffff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header nav img.logo {
+            height: 40px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #f37523;
+            text-align: center;
+            margin-bottom: 30px;
+            
+        }
+
+        .info-item {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .info-item strong {
+            display: inline-block;
+            width: 110px;
+            color: #f37523;
+        }
+
+        footer {
+            text-align: center;
+            margin: 3rem 0 1rem;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid grey;
+        }
+
+        footer a {
+            color: #004080;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="header.png" alt="Logo" class="logo" />
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Profile</h2>
+        <div id="display">
+            <!-- Info will be inserted here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            <span class="powered-by">Powered by </span>
+            <a href="https://mulahrewards.com" target="_blank" rel="noopener" class="mulah-link">MulahRewards</a>
+        </p>
+    </footer>
+
+    <script>
+        // Parse URL params
+        const params = new URLSearchParams(window.location.search);
+
+        const phone = params.get('phone') || '+60173527250';
+        const name = params.get('name') || 'N/A';
+        const day = params.get('birthDay') || 'N/A';
+        const month = params.get('birthMonth') || 'N/A';
+        const year = params.get('birthYear') || 'N/A';
+        let email = params.get('email') || 'N/A';
+
+        // Handle "No email" case if checkbox was checked and no email sent
+        if (!email || email.trim() === '') {
+            email = 'No email address provided';
+        }
+
+        // Convert month number to month name
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        const monthName = monthNames[month - 1] || 'N/A';
+
+        const birthday = (day !== 'N/A' && monthName !== 'N/A' && year !== 'N/A')
+            ? `${day} ${monthName} ${year}`
+            : 'N/A';
+
+        // Compose display HTML
+        const displayDiv = document.getElementById('display');
+        displayDiv.innerHTML = `
+      <div class="info-item"><strong>Phone Number:</strong> ${phone}</div>
+      <div class="info-item"><strong>Full Name:</strong> ${name}</div>
+      <div class="info-item"><strong>Email:</strong> ${email}</div>
+      <div class="info-item"><strong>Birthday:</strong> ${birthday}</div>
+    `;
+    </script>
+</body>
+
+</html>

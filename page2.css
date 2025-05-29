@@ -1,0 +1,160 @@
+footer {
+    border-top: 1px solid grey;
+
+}
+
+footer p {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    color: grey;
+    text-align: center;
+}
+
+.powered-by {
+    color: grey;
+}
+
+.mulah-link {
+    color: rgb(93, 93, 220);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mulah-link:hover {
+    color: darkblue;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    /* centers content horizontally */
+    align-items: center;
+    /* centers content vertically */
+    padding: 20px 0;
+}
+
+.input-note {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.logo {
+    height: 60px;
+    /* adjust as needed */
+    width: auto;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    background: #ffffff;
+}
+
+form {}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: gray;
+    margin-bottom: 5px;
+    display: block;
+    /* Ensures it stays on its own line */
+
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    background-color: #f37523;
+    color: white;
+    /* white text */
+    border: none;
+    /* no border */
+    padding: 12px 40px;
+    /* wider button (more horizontal padding) */
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 50px;
+    /* optional: slightly rounded corners */
+    width: 100%;
+    margin-top: 50px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.main-content2 {
+    max-width: 500px;
+    /* limit width */
+    margin: auto;
+    /* center horizontally + vertical spacing */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left;
+    /* center headings and form */
+    font-family: Arial, sans-serif;
+}
+
+.s4 {
+    font-size: small;
+    margin-top: -20px;
+    margin-bottom: 50px;
+    color: gray;
+    font-style: italic;
+
+}
+
+.s3 {
+    font-size: 2.5rem;
+    margin-top: auto;
+    color: gray;
+}
+
+.birthday-input,
+.email-input {
+    margin-top: 20px;
+}
+
+.select-input {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.select-input select {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="gray" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 16px;
+}
+
+.checkbox-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    /* space between checkbox and text */
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-start; 
+}
